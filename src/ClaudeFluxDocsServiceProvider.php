@@ -15,6 +15,8 @@ class ClaudeFluxDocsServiceProvider extends ServiceProvider
     {
         $this->publishes([
             __DIR__.'/../resources/claude-flux.md' => base_path('claude-flux.md'),
+            __DIR__.'/../resources/claude-laravel.md' => base_path('claude-laravel.md'),
+            __DIR__.'/../resources/claude.md' => base_path('claude.md'),
         ], 'claude-flux-docs');
     }
 }
