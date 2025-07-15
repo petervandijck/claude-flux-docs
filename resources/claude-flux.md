@@ -51,7 +51,15 @@ Highlight information like status, category, or count.
 </flux:badge>
 ```
 
-**Props**: `color`, `size`, `variant`, `icon`, `icon:trailing`, `as`, `inset`
+**Props**:
+- `color`: zinc, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose (default: zinc)
+- `size`: sm, lg
+- `variant`: pill, solid
+- `icon`: Heroicon name
+- `icon:trailing`: Heroicon name
+- `icon:variant`: outline, solid, mini, micro (default: mini)
+- `as`: button, div (default: div)
+- `inset`: top, bottom, left, right (or combinations)
 
 ### Button
 Interactive controls for forms and UI actions.
@@ -74,7 +82,21 @@ Interactive controls for forms and UI actions.
 </flux:button.group>
 ```
 
-**Props**: `variant`, `size`, `icon`, `icon:trailing`, `square`, `inset`, `loading`, `tooltip`, `kbd`, `as`, `href`
+**Props**:
+- `variant`: outline, primary, filled, danger, ghost, subtle (default: outline)
+- `size`: base, sm, xs (default: base)
+- `icon`: Heroicon name
+- `icon:trailing`: Heroicon name
+- `icon:variant`: outline, solid, mini, micro (default: micro)
+- `square`: boolean
+- `inset`: top, bottom, left, right (or combinations)
+- `loading`: boolean (default: true)
+- `tooltip`: string
+- `kbd`: string
+- `as`: button, a, div (default: button)
+- `href`: URL (when as="a")
+- `type`: button, submit (default: button)
+- `color`: zinc, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
 
 ### Callout
 Highlight important information or guide users toward key actions.
@@ -107,7 +129,14 @@ Highlight important information or guide users toward key actions.
 </flux:callout>
 ```
 
-**Props**: `icon`, `variant`, `color`, `inline`, `heading`, `text`
+**Props**:
+- `icon`: Heroicon name
+- `icon:variant`: outline, solid, mini, micro (default: mini)
+- `variant`: secondary, success, warning, danger (default: secondary)
+- `color`: zinc, red, orange, amber, yellow, lime, green, emerald, teal, cyan, sky, blue, indigo, violet, purple, fuchsia, pink, rose
+- `inline`: boolean (default: false)
+- `heading`: string (shorthand for flux:callout.heading)
+- `text`: string (shorthand for flux:callout.text)
 
 ### Checkbox
 Select one or multiple options from a set.
@@ -138,7 +167,17 @@ Select one or multiple options from a set.
 </flux:checkbox.group>
 ```
 
-**Props**: `wire:model`, `label`, `description`, `value`, `checked`, `disabled`, `invalid`
+**Props**:
+- `wire:model`: Livewire property name
+- `label`: string
+- `description`: string
+- `value`: mixed
+- `checked`: boolean
+- `disabled`: boolean
+- `invalid`: boolean
+- `indeterminate`: boolean
+- `variant`: default, cards, pills, buttons (Pro variants)
+- `icon`: Heroicon name (for card/button variants)
 
 ### Dropdown
 Composable dropdown with navigation menus and complex action menus.
@@ -169,7 +208,11 @@ Composable dropdown with navigation menus and complex action menus.
 </flux:dropdown>
 ```
 
-**Props**: `position`, `align`, `offset`, `gap`
+**Props**:
+- `position`: top, right, bottom, left (default: bottom)
+- `align`: start, center, end (default: start)
+- `offset`: number in pixels (default: 0)
+- `gap`: number in pixels (default: 4)
 
 ### Field
 Encapsulate input elements with labels, descriptions, and validation.
@@ -201,7 +244,8 @@ Encapsulate input elements with labels, descriptions, and validation.
 </flux:fieldset>
 ```
 
-**Props**: `variant` (block, inline)
+**Props**:
+- `variant`: block, inline (default: block)
 
 ### Input
 Capture user data with various forms of text input.
@@ -232,7 +276,29 @@ Capture user data with various forms of text input.
 </flux:input.group>
 ```
 
-**Props**: `type`, `size`, `variant`, `icon`, `icon:trailing`, `kbd`, `clearable`, `copyable`, `viewable`, `mask`, `as`, `class:input`
+**Props**:
+- `type`: text, email, password, file, date, etc. (default: text)
+- `size`: sm, xs
+- `variant`: outline, filled (default: outline)
+- `icon`: Heroicon name
+- `icon:trailing`: Heroicon name
+- `kbd`: string (keyboard shortcut hint)
+- `clearable`: boolean
+- `copyable`: boolean
+- `viewable`: boolean (for password inputs)
+- `mask`: string (Alpine mask pattern)
+- `as`: input, button (default: input)
+- `class:input`: string (CSS classes for input element)
+- `multiple`: boolean (for file inputs)
+- `disabled`: boolean
+- `readonly`: boolean
+- `invalid`: boolean
+- `wire:model`: Livewire property name
+- `label`: string
+- `description`: string
+- `description:trailing`: string
+- `badge`: string
+- `placeholder`: string
 
 ### Modal
 Display content in a layer above the main page.
@@ -282,7 +348,12 @@ $flux.modal('confirm').show()
 $flux.modal('confirm').close()
 ```
 
-**Props**: `name`, `variant`, `position`, `dismissible`, `wire:model`
+**Props**:
+- `name`: string (unique identifier)
+- `variant`: default, flyout, bare
+- `position`: right, left, bottom (default: right, for flyout)
+- `dismissible`: boolean (default: true)
+- `wire:model`: Livewire property name
 
 ### Radio
 Select one option from mutually exclusive choices.
@@ -309,7 +380,16 @@ Select one option from mutually exclusive choices.
 </flux:radio.group>
 ```
 
-**Props**: `wire:model`, `label`, `description`, `variant`, `size`, `icon`
+**Props**:
+- `wire:model`: Livewire property name
+- `label`: string
+- `description`: string
+- `variant`: default, segmented, cards, pills, buttons (Pro variants)
+- `size`: base, sm (for segmented)
+- `icon`: Heroicon name (for segmented/card variants)
+- `disabled`: boolean
+- `invalid`: boolean
+- `indicator`: boolean (default: true, for card variants)
 
 ### Select
 Choose a single option from a dropdown list.
@@ -347,7 +427,24 @@ Choose a single option from a dropdown list.
 </flux:select>
 ```
 
-**Props**: `variant` (default, listbox, combobox), `multiple`, `searchable`, `clearable`, `filter`
+**Props**:
+- `variant`: default, listbox, combobox
+- `multiple`: boolean (listbox only)
+- `searchable`: boolean (listbox/combobox only)
+- `clearable`: boolean (listbox/combobox only)
+- `filter`: boolean (default: true, combobox only)
+- `selected-suffix`: string (default: " selected", listbox multiple)
+- `clear`: select, close (default: select)
+- `indicator`: default, checkbox (for multiple listbox)
+- `size`: sm, xs
+- `disabled`: boolean
+- `invalid`: boolean
+- `wire:model`: Livewire property name
+- `placeholder`: string
+- `label`: string
+- `description`: string
+- `description:trailing`: string
+- `badge`: string
 
 ### Table
 Display structured data in a condensed, searchable format.
@@ -374,7 +471,8 @@ Display structured data in a condensed, searchable format.
 </flux:table>
 ```
 
-**Props**: `paginate` (Laravel paginator)
+**Props**:
+- `paginate`: Laravel paginator instance
 
 ### Tabs
 Organize content into separate panels within a single container.
@@ -404,7 +502,10 @@ Organize content into separate panels within a single container.
 </flux:tabs>
 ```
 
-**Props**: `variant` (default, segmented, pills), `size`, `wire:model`
+**Props**:
+- `variant`: default, segmented, pills
+- `size`: base, sm (default: base)
+- `wire:model`: Livewire property name
 
 ### Toast
 Temporary notifications with feedback about actions or events.
@@ -442,7 +543,10 @@ $flux.toast({
 })
 ```
 
-**Props**: `position`, `duration`, `variant`
+**Props**:
+- `position`: "bottom right", "bottom left", "top right", "top left" (default: "bottom right")
+- `duration`: number in milliseconds (default: 5000, use 0 for permanent)
+- `variant`: success, warning, danger
 
 ### Rich Text Editor
 Basic rich text editor built with ProseMirror and Tiptap.
@@ -475,7 +579,17 @@ Basic rich text editor built with ProseMirror and Tiptap.
 </flux:editor>
 ```
 
-**Props**: `toolbar`, `placeholder`, `disabled`, `invalid`
+**Props**:
+- `toolbar`: string (space-separated list: "heading | bold italic underline | align ~ undo redo")
+- `placeholder`: string
+- `disabled`: boolean
+- `invalid`: boolean
+- `wire:model`: Livewire property name
+- `value`: string (initial content)
+- `label`: string
+- `description`: string
+- `description:trailing`: string
+- `badge`: string
 
 ### Textarea
 Multi-line text input for longer content.
@@ -488,7 +602,16 @@ Multi-line text input for longer content.
 <flux:textarea resize="vertical" />
 ```
 
-**Props**: `rows`, `resize`, `placeholder`, `label`, `description`
+**Props**:
+- `rows`: number or "auto" (default: 4)
+- `resize`: vertical, horizontal, both, none (default: vertical)
+- `placeholder`: string
+- `label`: string
+- `description`: string
+- `description:trailing`: string
+- `badge`: string
+- `invalid`: boolean
+- `wire:model`: Livewire property name
 
 ### Switch
 Toggle settings on or off for binary options.
@@ -510,7 +633,12 @@ Toggle settings on or off for binary options.
 <flux:switch label="Setting" align="left" />
 ```
 
-**Props**: `wire:model`, `label`, `description`, `align`, `disabled`
+**Props**:
+- `wire:model`: Livewire property name
+- `label`: string
+- `description`: string
+- `align`: right, start, left, end (default: right/start)
+- `disabled`: boolean
 
 ## Advanced Components
 
@@ -535,6 +663,16 @@ Collapse and expand sections of content.
 </flux:accordion.item>
 ```
 
+**Props**:
+- `variant`: default, reverse (icon position)
+- `transition`: boolean (default: false)
+- `exclusive`: boolean (default: false)
+
+**Item Props**:
+- `heading`: string (shorthand)
+- `expanded`: boolean (default: false)
+- `disabled`: boolean (default: false)
+
 ### Autocomplete
 Enhanced input with autocomplete suggestions.
 
@@ -546,6 +684,28 @@ Enhanced input with autocomplete suggestions.
 </flux:autocomplete>
 ```
 
+**Props**:
+- `wire:model`: Livewire property name
+- `type`: text, email, password, file, date, etc. (default: text)
+- `label`: string
+- `description`: string
+- `placeholder`: string
+- `size`: sm, xs
+- `variant`: outline, filled (default: outline)
+- `disabled`: boolean
+- `readonly`: boolean
+- `invalid`: boolean
+- `multiple`: boolean (for file inputs)
+- `mask`: string (Alpine mask pattern)
+- `icon`: Heroicon name
+- `icon:trailing`: Heroicon name
+- `kbd`: string
+- `clearable`: boolean
+- `copyable`: boolean
+- `viewable`: boolean
+- `as`: input, button (default: input)
+- `class:input`: string
+
 ### Breadcrumbs
 Navigation hierarchy display.
 
@@ -556,6 +716,10 @@ Navigation hierarchy display.
     <flux:breadcrumbs.item>Post Title</flux:breadcrumbs.item>
 </flux:breadcrumbs>
 ```
+
+**Item Props**:
+- `href`: string (URL)
+- `icon`: Heroicon name
 
 ### Card
 Container for related content.
@@ -574,6 +738,9 @@ Container for related content.
 </flux:card>
 ```
 
+**Props**:
+- `size`: base, sm (default: base)
+
 ### Heading
 Consistent heading component.
 
@@ -584,6 +751,11 @@ Consistent heading component.
 <flux:heading level="2">H2 element</flux:heading>
 <flux:heading accent>Accent color</flux:heading>
 ```
+
+**Props**:
+- `size`: base, lg, xl (default: base)
+- `level`: 1, 2, 3, 4 (renders as div if not specified)
+- `accent`: boolean
 
 ### Pagination
 Navigate through data pages.
