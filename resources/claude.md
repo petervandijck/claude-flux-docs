@@ -26,3 +26,8 @@
 - Organize by domain folders: `app/Livewire/Contacts/`
 - Maintain a consistent method order: properties, mount, updated hooks, action methods, helper methods, render.
 - Extract to dedicated form objects with `fromModel()` helpers
+
+## External APIs
+When creating an external API,
+- Create a Service to call each external API, `app/Services/ServiceName/ServiceName.php`
+- Create a Command for testing for the service
